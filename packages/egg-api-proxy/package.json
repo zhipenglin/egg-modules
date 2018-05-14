@@ -1,6 +1,6 @@
 {
-  "name": "@egg/egg-api-proxy",
-  "version": "2.0.8-0",
+  "name": "egg-api-proxy",
+  "version": "2.0.9-0",
   "description": "用于转发页面请求到后端，转发页面到index",
   "eggPlugin": {
     "name": "apiProxy"
@@ -38,11 +38,6 @@
     "pkgfiles": "egg-bin pkgfiles",
     "autod": "autod"
   },
-  "files": [
-    "app.js",
-    "agent.js",
-    "config"
-  ],
   "ci": {
     "version": "8, 9"
   },

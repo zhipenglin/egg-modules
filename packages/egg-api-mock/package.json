@@ -1,6 +1,6 @@
 {
   "name": "@egg/egg-api-mock",
-  "version": "2.0.8-0",
+  "version": "2.0.9-0",
   "description": "mock后端接口",
   "eggPlugin": {
     "name": "apiMock"
@@ -38,11 +38,6 @@
     "pkgfiles": "egg-bin pkgfiles",
     "autod": "autod"
   },
-  "files": [
-    "app.js",
-    "agent.js",
-    "config"
-  ],
   "ci": {
     "version": "8, 9"
   },
