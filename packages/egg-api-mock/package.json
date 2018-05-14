@@ -1,6 +1,6 @@
 {
-  "name": "egg-api-mock",
-  "version": "2.0.7-0",
+  "name": "@egg/egg-api-mock",
+  "version": "2.0.8-0",
   "description": "mock后端接口",
   "eggPlugin": {
     "name": "apiMock"
