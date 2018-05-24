@@ -1,12 +1,9 @@
 {
-  "name": "egg-api-mock",
+  "name": "egg-dev-cache",
   "version": "2.0.24",
-  "description": "mock后端接口",
+  "description": "",
   "eggPlugin": {
-    "name": "apiMock",
-    "dependencies": [
-      "apiProxy"
-    ]
+    "name": "devCache"
   },
   "keywords": [
     "egg",
@@ -14,16 +11,14 @@
     "egg-plugin"
   ],
   "dependencies": {
-    "egg-api-proxy": "^2.0.24",
     "fs-extra": "^6.0.1",
-    "lodash": "^4.17.10",
-    "minimatch": "^3.0.4"
+    "md5": "^2.2.1"
   },
   "devDependencies": {
     "autod": "^3.0.0",
     "autod-egg": "^1.0.0",
     "egg": "^2.0.0",
-    "egg-bin": "^4.7.0",
+    "egg-bin": "^4.3.0",
     "egg-ci": "^1.8.0",
     "egg-mock": "^3.13.0",
     "eslint": "^4.11.0",
@@ -42,17 +37,22 @@
     "pkgfiles": "egg-bin pkgfiles",
     "autod": "autod"
   },
+  "files": [
+    "app.js",
+    "agent.js",
+    "config"
+  ],
   "ci": {
     "version": "8, 9"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-api-mock.git"
+    "url": "git+https://github.com/eggjs/egg-dev-cache.git"
   },
   "bugs": {
     "url": "https://github.com/eggjs/egg/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-api-mock#readme",
-  "author": "linzp",
+  "homepage": "https://github.com/eggjs/egg-dev-cache#readme",
+  "author": "",
   "license": "MIT"
 }

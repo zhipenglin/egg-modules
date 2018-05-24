@@ -1,6 +1,6 @@
 {
   "name": "egg-api-proxy",
-  "version": "2.0.23",
+  "version": "2.0.24",
   "description": "用于转发页面请求到后端，转发页面到index",
   "eggPlugin": {
     "name": "apiProxy"
@@ -19,7 +19,7 @@
     "autod": "^3.0.0",
     "autod-egg": "^1.0.0",
     "egg": "^2.0.0",
-    "egg-bin": "^4.3.0",
+    "egg-bin": "^4.7.0",
     "egg-ci": "^1.8.0",
     "egg-mock": "^3.13.0",
     "eslint": "^4.11.0",
