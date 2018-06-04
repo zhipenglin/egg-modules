@@ -1,6 +1,6 @@
 {
   "name": "ic-tob-script",
-  "version": "2.0.27-2",
+  "version": "2.0.27-3",
   "description": "用于统一tob打包项目的配置",
   "target": "node",
   "bin": {
@@ -15,6 +15,7 @@
     "egg-tob-framework": ">=2"
   },
   "dependencies": {
+    "autoprefixer": "^8.6.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-add-module-exports": "^0.2.1",
