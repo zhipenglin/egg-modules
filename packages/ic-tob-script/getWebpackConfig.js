@@ -62,7 +62,7 @@ module.exports = (name)=>{
             url: `http://localhost:${port}/${projectName}`
         }));
     }
-    const STATIC_ROOT_DIR=path.resolve(__dirname, './app/static/tob');
+    const STATIC_ROOT_DIR=path.resolve(currentPath, './app/static/tob');
     return {
         entry: {
             'commons': [
@@ -93,9 +93,9 @@ module.exports = (name)=>{
             // import .jsx文件免输后缀名
             extensions: ['.js', '.jsx'],
             alias: {
-                'tob': path.join(currentPath, './app/static/tob/'),
-                'tob-common': path.join(currentPath, './app/static/tob/js/common/components'),
-                'tob-biz': path.join(currentPath, './app/static/tob/js/tob/common/components'),
+                'tob': path.join(STATIC_ROOT_DIR, './'),
+                'tob-common': path.join(STATIC_ROOT_DIR, './js/common/components'),
+                'tob-biz': path.join(STATIC_ROOT_DIR, './js/tob/common/components'),
                 'biz': path.join(currentPath, './app/static/components/biz'),
                 'filter':path.join(currentPath, './app/static/filter'),
                 'common': path.join(currentPath, './app/static/components/common'),

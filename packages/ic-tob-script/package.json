@@ -1,28 +1,17 @@
 {
-  "name": "egg-tob-framework",
+  "name": "ic-tob-script",
   "version": "2.0.27-0",
-  "description": "tob业务的egg定制framework",
+  "description": "用于统一tob打包项目的配置",
   "target": "node",
-  "bin": {
-    "tob-scripts": "./bin/scripts.js"
-  },
-  "main": "index.js",
   "scripts": {
-    "sync-tob": "rm -rf app/static/tob/&&cp -R .tob-repo/fe/static app/static/tob"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "linzp",
+  "author": "admin",
   "license": "ISC",
-  "dependencies": {
-    "cross-spawn": "^6.0.5",
-    "egg": "^2.6.0",
-    "egg-api-mock": "^2.0.27-0",
-    "egg-api-proxy": "^2.0.27-0",
-    "egg-view-nunjucks": "^2.2.0",
-    "lodash": "^4.17.5",
-    "qs": "^6.5.1",
-    "querystring": "^0.2.0"
+  "peerDependencies": {
+    "egg-tob-framework": ">=2"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -41,6 +30,7 @@
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
+    "fs-extra": "^6.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^2.30.1",
     "ic-customize-loader": "^1.1.6",
