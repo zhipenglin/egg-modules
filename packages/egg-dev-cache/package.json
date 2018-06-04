@@ -1,6 +1,6 @@
 {
   "name": "egg-dev-cache",
-  "version": "2.0.27-1",
+  "version": "2.0.27-2",
   "description": "",
   "eggPlugin": {
     "name": "devCache"
