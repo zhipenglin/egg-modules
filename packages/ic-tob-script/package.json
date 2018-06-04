@@ -1,8 +1,11 @@
 {
   "name": "ic-tob-script",
-  "version": "2.0.27-0",
+  "version": "2.0.27-1",
   "description": "用于统一tob打包项目的配置",
   "target": "node",
+  "bin": {
+    "tob-scripts": "./bin/scripts.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

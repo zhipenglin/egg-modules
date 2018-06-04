@@ -1,11 +1,8 @@
 {
   "name": "egg-tob-framework",
-  "version": "2.0.27-0",
+  "version": "2.0.27-1",
   "description": "tob业务的egg定制framework",
   "target": "node",
-  "bin": {
-    "tob-scripts": "./bin/scripts.js"
-  },
   "main": "index.js",
   "scripts": {
     "sync-tob": "rm -rf app/static/tob/&&cp -R .tob-repo/fe/static app/static/tob"
@@ -15,8 +12,8 @@
   "dependencies": {
     "cross-spawn": "^6.0.5",
     "egg": "^2.6.0",
-    "egg-api-mock": "^2.0.27-0",
-    "egg-api-proxy": "^2.0.27-0",
+    "egg-api-mock": "^2.0.27-1",
+    "egg-api-proxy": "^2.0.27-1",
     "egg-view-nunjucks": "^2.2.0",
     "lodash": "^4.17.5",
     "qs": "^6.5.1",
