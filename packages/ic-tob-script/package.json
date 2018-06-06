@@ -1,6 +1,6 @@
 {
   "name": "ic-tob-script",
-  "version": "2.0.27-5",
+  "version": "2.0.27-6",
   "description": "用于统一tob打包项目的配置",
   "target": "node",
   "bin": {
