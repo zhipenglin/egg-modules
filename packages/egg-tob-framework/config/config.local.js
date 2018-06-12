@@ -8,8 +8,8 @@ module.exports = appInfo => {
         forward: {
             renderView: async (ctx, next) => {
 
-                let module = list.indexOf(moduleName) > -1 ? moduleName : 'index';
-                await ctx.render(module, {
+                let module = list.indexOf(moduleName) > -1 ? moduleName : '';
+                await ctx.render(module||'index', {
                     m_bole_path: ctx.app.config.getBoleUrl(module),
                     account: {customize: module}
                 });

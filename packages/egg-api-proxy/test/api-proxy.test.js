@@ -66,4 +66,23 @@ describe('test/api-proxy.test.js', () => {
             .expect(resData)
             .expect(200);
     });
+
+    it('GET proxy Content-Type /api/get_info', () => {
+        const resData = {
+            err_no: 0,
+            results: 'success',
+        };
+        app.mockHttpclient('http://neitui_hr.cheng95.com/get_info', {
+            headers: {
+                'content-type': 'application/json;charset=utf-8',
+            },
+            data: resData,
+        });
+        return app.httpRequest()
+            .post('/api/get_info')
+            .send('{"a":1,"b":2}')
+            .set('Content-Type','application/json')
+            .expect(resData)
+            .expect(200);
+    });
 });

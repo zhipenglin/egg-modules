@@ -7,5 +7,11 @@
  */
 exports.apiMock = {
     mockDataPath:'/app/mock',
+    yapi:{
+        id:'',
+        base:'http://yapi.zhinanzhen.wiki/mock',
+        open:false,
+        urls:'*'
+    },
     urls:{}
 };

@@ -23,3 +23,15 @@ exports.apiProxy = {
     },
   },
 };
+
+exports.security = {
+    csrf: {
+        enable: false
+    }
+}
+
+exports.httpclient = {
+    request: {
+        timeout: 500000,
+    }
+}

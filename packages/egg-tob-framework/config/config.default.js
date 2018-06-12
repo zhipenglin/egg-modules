@@ -1,6 +1,7 @@
 'use strict';
 const path = require('path'),
     {getModule} = require('../customers.config'),
+    get = require('lodash/get'),
     projectName = process.env.npm_package_name, port = Number(process.env.npm_package_port);
 module.exports = appInfo => {
     const config = {};
@@ -94,11 +95,11 @@ module.exports = appInfo => {
     config.getBoleUrl = (module) => {
         switch (module) {
             case 'autoliv':
-                return '//m_autoliv_bole.ifchange.com';
+                return '//m-autoliv-bole.ifchange.com';
             case 'valeo':
                 return '//m.valeo_bole.ifchange.com';
             default:
-                return '//m.bole_v2.ifchange.com';
+                return '//m-bole-v2.ifchange.com';
         }
     };
 

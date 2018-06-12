@@ -20,6 +20,7 @@ exports.getBoleUrl=(module)=>{
         case 'globalegrow':
             return '//m_globalegrow_bole.ifchange.com';
         default:
+            //m-bole-v2.ifchange.com
             return '//m.bole_v2.ifchange.com';
     }
 };

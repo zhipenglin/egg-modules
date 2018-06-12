@@ -1,0 +1,139 @@
+0 silly input [ 'publish' ]
+1 silly flags { _: [ 'publish' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   'force-publish': '*',
+1 silly flags   forcePublish: '*' }
+2 verbose rootPath /Users/linzhipeng/Documents/egg-modules
+3 info version 2.11.0
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /Users/linzhipeng/Documents/egg-modules/VERSION
+7 silly initialize attempt
+8 info current version 2.0.27-5
+9 silly isDetachedHead
+10 silly getCurrentBranch
+11 verbose getCurrentBranch master
+12 verbose isDetachedHead false
+13 silly getCurrentBranch
+14 verbose getCurrentBranch master
+15 silly getUpdates
+16 info Checking for updated packages...
+17 silly hasTags
+18 verbose hasTags true
+19 silly getLastTag
+20 verbose getLastTag v2.0.27-5
+21 info Comparing with v2.0.27-5.
+22 verbose updated egg-api-mock
+23 verbose updated egg-api-proxy
+24 verbose updated egg-api-upload
+25 verbose updated egg-dev-cache
+26 verbose updated egg-tob-framework
+27 verbose updated ic-tob-script
+28 info Checking for prereleased packages...
+29 verbose prereleased egg-api-mock
+30 verbose prereleased egg-api-proxy
+31 verbose prereleased egg-dev-cache
+32 verbose prereleased egg-tob-framework
+33 verbose prereleased ic-tob-script
+34 silly collectDependents
+35 silly isPackageDependentOf egg-api-mock egg-api-mock
+36 silly isPackageDependentOf egg-api-proxy egg-api-mock
+37 silly isPackageDependentOf egg-api-mock egg-api-proxy
+38 verbose dependent egg-api-mock depends on egg-api-proxy
+39 silly isPackageDependentOf egg-api-mock egg-api-upload
+40 silly isPackageDependentOf egg-api-proxy egg-api-upload
+41 silly isPackageDependentOf egg-api-mock egg-dev-cache
+42 silly isPackageDependentOf egg-api-proxy egg-dev-cache
+43 silly isPackageDependentOf egg-api-mock egg-tob-framework
+44 silly isPackageDependentOf egg-api-proxy egg-tob-framework
+45 silly isPackageDependentOf egg-api-mock ic-tob-script
+46 silly isPackageDependentOf egg-api-proxy ic-tob-script
+47 silly isPackageDependentOf egg-api-proxy egg-api-mock
+48 silly isPackageDependentOf egg-api-proxy egg-api-proxy
+49 silly isPackageDependentOf egg-api-proxy egg-api-upload
+50 silly isPackageDependentOf egg-api-proxy egg-dev-cache
+51 silly isPackageDependentOf egg-api-proxy egg-tob-framework
+52 silly isPackageDependentOf egg-api-proxy ic-tob-script
+53 silly isPackageDependentOf egg-api-upload egg-api-mock
+54 silly isPackageDependentOf egg-api-proxy egg-api-mock
+55 silly isPackageDependentOf egg-api-upload egg-api-proxy
+56 verbose dependent egg-api-upload depends on egg-api-proxy
+57 silly isPackageDependentOf egg-api-upload egg-api-upload
+58 silly isPackageDependentOf egg-api-proxy egg-api-upload
+59 silly isPackageDependentOf egg-api-upload egg-dev-cache
+60 silly isPackageDependentOf egg-api-proxy egg-dev-cache
+61 silly isPackageDependentOf egg-api-upload egg-tob-framework
+62 silly isPackageDependentOf egg-api-proxy egg-tob-framework
+63 silly isPackageDependentOf egg-api-upload ic-tob-script
+64 silly isPackageDependentOf egg-api-proxy ic-tob-script
+65 silly isPackageDependentOf egg-dev-cache egg-api-mock
+66 silly isPackageDependentOf egg-dev-cache egg-api-proxy
+67 silly isPackageDependentOf egg-dev-cache egg-api-upload
+68 silly isPackageDependentOf egg-dev-cache egg-dev-cache
+69 silly isPackageDependentOf egg-dev-cache egg-tob-framework
+70 silly isPackageDependentOf egg-dev-cache ic-tob-script
+71 silly isPackageDependentOf egg-tob-framework egg-api-mock
+72 verbose dependent egg-tob-framework depends on egg-api-mock
+73 silly isPackageDependentOf egg-tob-framework egg-api-proxy
+74 verbose dependent egg-tob-framework depends on egg-api-proxy
+75 silly isPackageDependentOf egg-tob-framework egg-api-upload
+76 silly isPackageDependentOf egg-api-mock egg-api-upload
+77 silly isPackageDependentOf egg-api-proxy egg-api-upload
+78 silly isPackageDependentOf egg-tob-framework egg-dev-cache
+79 silly isPackageDependentOf egg-api-mock egg-dev-cache
+80 silly isPackageDependentOf egg-api-proxy egg-dev-cache
+81 silly isPackageDependentOf egg-tob-framework egg-tob-framework
+82 silly isPackageDependentOf egg-api-mock egg-tob-framework
+83 silly isPackageDependentOf egg-api-proxy egg-tob-framework
+84 silly isPackageDependentOf egg-tob-framework ic-tob-script
+85 silly isPackageDependentOf egg-api-mock ic-tob-script
+86 silly isPackageDependentOf egg-api-proxy ic-tob-script
+87 silly isPackageDependentOf ic-tob-script egg-api-mock
+88 silly isPackageDependentOf ic-tob-script egg-api-proxy
+89 silly isPackageDependentOf ic-tob-script egg-api-upload
+90 silly isPackageDependentOf ic-tob-script egg-dev-cache
+91 silly isPackageDependentOf ic-tob-script egg-tob-framework
+92 silly isPackageDependentOf ic-tob-script ic-tob-script
+93 silly collectUpdates
+94 verbose has filtered update egg-api-mock
+95 verbose has filtered update egg-api-proxy
+96 verbose has filtered update egg-api-upload
+97 verbose has filtered update egg-dev-cache
+98 verbose has filtered update egg-tob-framework
+99 verbose has filtered update ic-tob-script
+100 silly initialize success
+101 silly execute attempt
+102 silly addFile /Users/linzhipeng/Documents/egg-modules/lerna.json
+103 silly runScriptSync preversion undefined
+104 silly runScriptSync preversion egg-api-mock
+105 silly runScriptSync version egg-api-mock
+106 silly runScriptSync preversion egg-api-proxy
+107 silly runScriptSync version egg-api-proxy
+108 silly runScriptSync preversion egg-api-upload
+109 silly runScriptSync version egg-api-upload
+110 silly runScriptSync preversion egg-dev-cache
+111 silly runScriptSync version egg-dev-cache
+112 silly runScriptSync preversion egg-tob-framework
+113 silly runScriptSync version egg-tob-framework
+114 silly runScriptSync preversion ic-tob-script
+115 silly runScriptSync version ic-tob-script
+116 silly runScriptSync version undefined
+117 silly addFile /Users/linzhipeng/Documents/egg-modules/packages/egg-api-mock/package.json
+118 silly addFile /Users/linzhipeng/Documents/egg-modules/packages/egg-api-proxy/package.json
+119 silly addFile /Users/linzhipeng/Documents/egg-modules/packages/egg-api-upload/package.json
+120 silly addFile /Users/linzhipeng/Documents/egg-modules/packages/egg-dev-cache/package.json
+121 silly addFile /Users/linzhipeng/Documents/egg-modules/packages/egg-tob-framework/package.json
+122 silly addFile /Users/linzhipeng/Documents/egg-modules/packages/ic-tob-script/package.json
+123 silly commit v2.0.27-5
+124 verbose commit [ 'commit', '--no-verify', '-m', 'v2.0.27-5' ]
+125 silly addTag v2.0.27-5
+126 error execute caught error
+127 error Error: fatal: tag 'v2.0.27-5' already exists
+127 error
+127 error     at Function.module.exports.sync (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:303:26)
+127 error     at Function.execSync (/usr/local/lib/node_modules/lerna/lib/ChildProcessUtilities.js:59:30)
+127 error     at Function.addTag (/usr/local/lib/node_modules/lerna/lib/GitUtilities.js:100:39)
+127 error     at PublishCommand.gitCommitAndTagVersion (/usr/local/lib/node_modules/lerna/lib/commands/PublishCommand.js:779:30)
+127 error     at PublishCommand.commitAndTagUpdates (/usr/local/lib/node_modules/lerna/lib/commands/PublishCommand.js:740:27)
+127 error     at PublishCommand.execute (/usr/local/lib/node_modules/lerna/lib/commands/PublishCommand.js:329:14)

@@ -8,15 +8,15 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const antdTheme = require('./antdTheme');
 const ENV = process.env.NODE_ENV || 'development', isProd = ENV === 'production';
-const currentPath = process.cwd(),projectName=process.env.npm_package_name,port=process.env.npm_package_port,staticPort=process.env.npm_package_staticPort;
-//npm_package_staticPort
-//process.env.npm_package_name
-module.exports = (name)=>{
-    const relativePath=name||'common',distPath = path.join(currentPath, 'dist/static',relativePath);
+const currentPath = process.cwd(), projectName = process.env.npm_package_name, port = process.env.npm_package_port,
+    staticPort = process.env.npm_package_staticPort;
+
+module.exports = (name, defaults=[]) => {
+    const relativePath = name || 'common', distPath = path.join(currentPath, 'dist/static', relativePath);
     const plugins = [
         new HtmlWebpackPlugin({
             inject: true,
-            filename: path.join(currentPath, `app/view/${name||'index'}.html`),
+            filename: path.join(currentPath, `app/view/${name || 'index'}.html`),
             template: path.join(currentPath, 'app/static/index.html'),
         }),
         new webpack.optimize.CommonsChunkPlugin({
@@ -62,13 +62,13 @@ module.exports = (name)=>{
             url: `http://localhost:${port}/${projectName}`
         }));
     }
-    const STATIC_ROOT_DIR=path.resolve(currentPath, './app/static/tob');
+    const STATIC_ROOT_DIR = path.resolve(currentPath, './app/static/tob');
     return {
         entry: {
             'commons': [
                 "react", "react-dom", "classnames", "react-router", "lodash"
             ],
-            'index': [path.resolve(__dirname,'./app/static/public-path.js'), './app/static/index.js']
+            'index': [path.resolve(__dirname, './public-path.js'), './app/static/index.js']
         },
         output: {
             pathinfo: true,
@@ -97,7 +97,7 @@ module.exports = (name)=>{
                 'tob-common': path.join(STATIC_ROOT_DIR, './js/common/components'),
                 'tob-biz': path.join(STATIC_ROOT_DIR, './js/tob/common/components'),
                 'biz': path.join(currentPath, './app/static/components/biz'),
-                'filter':path.join(currentPath, './app/static/filter'),
+                'filter': path.join(currentPath, './app/static/filter'),
                 'common': path.join(currentPath, './app/static/components/common'),
                 '@js': path.resolve(STATIC_ROOT_DIR, 'js'),
 
@@ -148,24 +148,24 @@ module.exports = (name)=>{
                                         rules: [
                                             {
                                                 test: /@p@([./])/g,
-                                                value:`${name}$1`
+                                                value:`${name}$1${defaults&&defaults.length>0?` ${defaults.map(name=>`${name}$1`).join(' ')}`:''}`
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     loader: 'babel-loader',
-                                    options:{
+                                    options: {
                                         babelrc: false,
                                         comments: false,
                                         presets: [
                                             require.resolve('babel-preset-env'),
                                             require.resolve('babel-preset-react')
                                         ],
-                                        plugins:[
-                                            [require.resolve('babel-plugin-import'),{
+                                        plugins: [
+                                            [require.resolve('babel-plugin-import'), {
                                                 "libraryName": "antd",
-                                                "style":true
+                                                "style": true
                                             }],
                                             require.resolve('babel-plugin-transform-runtime'),
                                             require.resolve('babel-plugin-tob-transform'),

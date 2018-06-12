@@ -7,9 +7,5 @@ exports.apiMock = {
         id:'71',
         base:'http://yapi.zhinanzhen.wiki/mock',
         open:true
-    },
-    urls:{
-        '/index':'index.json',
-        '/index_js':'index.js'
     }
 };

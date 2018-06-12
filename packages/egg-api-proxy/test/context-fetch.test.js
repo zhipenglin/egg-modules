@@ -58,5 +58,27 @@ describe('test/context-fetch.test.js', () => {
         assert.deepEqual(data, resData);
       });
     });
+    it('发送request payload请求',()=>{
+        const resData = {
+            err_no: 0,
+            results: 'success',
+        };
+        app.mockHttpclient('http://www.ifchange.com/api/account/gettopaccountinfo', {
+            headers: {
+                'content-type': 'application/json;charset=utf-8',
+            },
+            data: resData,
+        });
+        return ctx.fetch('/account/gettopaccountinfo', {
+            hostname: 'tob',
+            method:'post',
+            data:'{"a":1,"b":2}',
+            headers:{
+                'content-type':'application/json'
+            }
+        }).then(({ data }) => {
+            assert.deepEqual(data, resData);
+        });
+    });
   });
 });
