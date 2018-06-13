@@ -1,6 +1,6 @@
 {
   "name": "ic-tob-script",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "用于统一tob打包项目的配置",
   "target": "node",
   "bin": {
@@ -15,13 +15,13 @@
     "egg-tob-framework": ">=2"
   },
   "dependencies": {
-    "autoprefixer": "^8.6.0",
+    "autoprefixer": "^8.6.2",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-import": "^1.6.7",
+    "babel-plugin-import": "^1.8.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-plugin-tob-transform": "^1.1.6",
+    "babel-plugin-tob-transform": "^1.2.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -37,7 +37,7 @@
     "fs-extra": "^6.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^2.30.1",
-    "ic-customize-loader": "^1.1.6",
+    "ic-customize-loader": "^1.2.0",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
     "node-sass": "^4.8.3",
@@ -47,7 +47,7 @@
     "react-dev-utils": "^4.2.1",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.19.0",
-    "tob-router": "^1.1.6",
+    "tob-router": "^1.2.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.2",
