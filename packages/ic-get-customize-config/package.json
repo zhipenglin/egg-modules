@@ -1,0 +1,16 @@
+{
+  "name": "ic-get-customize-config",
+  "version": "2.1.2-0",
+  "description": "获取定制配置",
+  "target": "node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "admin",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^6.0.1",
+    "lodash": "^4.17.10"
+  }
+}
