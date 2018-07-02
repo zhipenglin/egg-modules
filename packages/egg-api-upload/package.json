@@ -1,6 +1,6 @@
 {
   "name": "egg-api-upload",
-  "version": "2.1.9",
+  "version": "2.2.0",
   "description": "文件上传插件",
   "eggPlugin": {
     "name": "apiUpload",
@@ -14,7 +14,7 @@
     "egg-plugin"
   ],
   "dependencies": {
-    "egg-api-proxy": "^2.1.9"
+    "egg-api-proxy": "^2.2.0"
   },
   "devDependencies": {
     "autod": "^3.0.0",

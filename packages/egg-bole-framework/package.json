@@ -1,12 +1,9 @@
 {
-  "name": "egg-tob-framework",
+  "name": "egg-bole-framework",
   "version": "2.2.0",
-  "description": "tob业务的egg定制framework",
+  "description": "bole业务的egg定制framework",
   "target": "node",
   "main": "index.js",
-  "scripts": {
-    "sync-tob": "rm -rf app/static/tob/&&cp -R .tob-repo/fe/static app/static/tob"
-  },
   "author": "linzp",
   "license": "ISC",
   "dependencies": {
