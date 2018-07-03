@@ -1,17 +1,14 @@
 const staticPort = Number(process.env.npm_package_staticPort),
     path = require('path'),
-    moduleName = process.env.NODE_TARGET || '',
-    {list} = require('../customers.config');
+    {devTarget} = require('ic-get-customize-config');
 module.exports = appInfo => {
     const config = {};
     config.apiProxy = {
         forward: {
             renderView: async (ctx, next) => {
-
-                let module = list.indexOf(moduleName) > -1 ? moduleName : '';
-                await ctx.render(module||'index', {
-                    m_bole_path: ctx.app.config.getBoleUrl(module),
-                    account: {customize: module}
+                await ctx.render(devTarget||'index', {
+                    m_bole_path: ctx.app.config.getBoleUrl(devTarget),
+                    account: {customize: devTarget}
                 });
             }
         }

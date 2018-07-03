@@ -13,6 +13,7 @@ const currentPath = process.cwd(), projectName = process.env.npm_package_name, p
 
 module.exports = (name, defaults=[]) => {
     const relativePath = name || 'common', distPath = path.join(currentPath, 'dist/static', relativePath);
+    if(name==='common') name='';
     const plugins = [
         new HtmlWebpackPlugin({
             inject: true,
@@ -51,7 +52,7 @@ module.exports = (name, defaults=[]) => {
                 /^\.\/(zh-cn)$/
             ),
             new ExtractTextPlugin(`css/[name].[contenthash:7].css`),
-            new CleanWebpackPlugin(distPath),
+            new CleanWebpackPlugin(distPath,{allowExternal:true}),
             new webpack.LoaderOptionsPlugin({
                 minimize: true,
                 debug: false

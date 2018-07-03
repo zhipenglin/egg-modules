@@ -16,12 +16,12 @@ exports.getBoleUrl=(module)=>{
         case 'autoliv':
             return '//m_autoliv_bole.ifchange.com';
         case 'valeo':
-            return '//m.valeo_bole.ifchange.com';
+            return '//m_valeo_bole.ifchange.com';
         case 'globalegrow':
             return '//m_globalegrow_bole.ifchange.com';
         default:
             //m-bole-v2.ifchange.com
-            return '//m.bole_v2.ifchange.com';
+            return '//m-bole.ifchange.com';
     }
 };
 

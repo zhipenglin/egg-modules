@@ -1,5 +1,5 @@
 const {devTarget} = require('ic-get-customize-config');
-const getAccount = require('./getAccount');
+const getAccount = require('../lib/getAccount');
 const staticPort = Number(process.env.npm_package_staticPort);
 module.exports = appInfo => {
     const config = exports = {};
@@ -13,7 +13,7 @@ module.exports = appInfo => {
 
     config.view = {
         locals: {
-            static_path: `http://192.168.110.159:${staticPort}/static`
+            static_path: `http://localhost:${staticPort}/static`
         }
     };
 
@@ -37,20 +37,6 @@ module.exports = appInfo => {
                     host: 'vanke_neitui_bole.wmq.dev3.ifchange.com'
                 }
             }
-        }
-    };
-
-    config.apiMock = {
-        // yapi:{
-        //   id:'71',
-        //   open:true,
-        //   urls:[
-        //     '/advantage/*'
-        //   ]
-        // },
-        urls: {
-            '/api/advantage/relations_number': 'reward.json',
-            '/api/advantage/relations_list': 'list.json'
         }
     };
 

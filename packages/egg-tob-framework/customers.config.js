@@ -1,4 +1,4 @@
-const {get}=require('lodash'),list=['valeo','tianhua','greentown','newcommon','autoliv','globalegrow'];
+const {get}=require('lodash'),list=require('ic-get-customize-config').all;
 
 const getModuleGenerator=({list})=>(account)=>{
     const customize=get(account,'customize');

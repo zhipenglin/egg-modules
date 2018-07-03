@@ -3,7 +3,7 @@
 const path = require('path'),
     projectName = process.env.npm_package_name,
     port = Number(process.env.npm_package_port);
-const getAccount = require('./getAccount');
+const getAccount = require('../lib/getAccount');
 const list = require('ic-get-customize-config').all;
 module.exports = appInfo => {
     const config = exports = {};
@@ -60,9 +60,6 @@ module.exports = appInfo => {
         prefix: '',
         dir: path.join(appInfo.baseDir, 'dist/static'),
     };
-
-    // add your config here
-    config.middleware = [];
 
     // apiProxy插件配置
     config.apiProxy = {

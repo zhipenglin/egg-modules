@@ -26,7 +26,7 @@ exports.getBoleUrl=(module)=>{
         case 'globalegrow':
             return '//m.globalegrow_bole.testing2.ifchange.com';
         default:
-            return '//m.bole_v2.testing2.ifchange.com';
+            return '//m.bole_egg.testing2.ifchange.com';
     }
 };
 
