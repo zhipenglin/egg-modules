@@ -1,4 +1,5 @@
 const path = require('path');
+const fs=require('fs');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
@@ -7,9 +8,17 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const antdTheme = require('./antdTheme');
+const address = require('address');
+const ip = address.ip() || address.ip('lo');
 const ENV = process.env.NODE_ENV || 'development', isProd = ENV === 'production';
 const currentPath = process.cwd(), projectName = process.env.npm_package_name, port = process.env.npm_package_port,
-    staticPort = process.env.npm_package_staticPort;
+    staticPort = process.env.npm_package_staticPort,baseAddress=process.env.npm_package_address||`http://${ip}`;
+
+let transform=(config)=>config;
+
+if(fs.existsSync(path.resolve(currentPath,'getWebpackConfig.js'))){
+    transform=require(path.resolve(currentPath,'getWebpackConfig.js'));
+};
 
 module.exports = (name, defaults=[]) => {
     const relativePath = name || 'common', distPath = path.join(currentPath, 'dist/static', relativePath);
@@ -60,11 +69,11 @@ module.exports = (name, defaults=[]) => {
         );
     } else {
         plugins.push(new webpack.HotModuleReplacementPlugin(), new OpenBrowserPlugin({
-            url: `http://localhost:${port}/${projectName}`
+            url: `${baseAddress}:${port}`
         }));
     }
     const STATIC_ROOT_DIR = path.resolve(currentPath, './app/static/tob');
-    return {
+    return transform({
         entry: {
             'commons': [
                 "react", "react-dom", "classnames", "react-router", "lodash"
@@ -76,13 +85,13 @@ module.exports = (name, defaults=[]) => {
             path: distPath,
             filename: `js/[name].[hash:7].js`,
             chunkFilename: `js/[name].[chunkhash:7].js`,
-            publicPath: isProd ? `{{static_path}}/${relativePath}` : `http://localhost:${staticPort}/static/${relativePath}`,
+            publicPath: isProd ? `{{static_path}}/${relativePath}` : `${baseAddress}:${staticPort}/static/${relativePath}`,
         },
         devtool: 'source-map',
         devServer: {
             port: staticPort,
             contentBase: './dist',
-            public: `http://localhost:${staticPort}`,
+            public: `${baseAddress}:${staticPort}`,
             before(app) {
                 app.use(function (req, res, next) {
                     res.set('Access-Control-Allow-Origin', '*');
@@ -301,5 +310,5 @@ module.exports = (name, defaults=[]) => {
             ],
         },
         plugins: plugins
-    }
+    });
 };
