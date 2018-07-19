@@ -52,17 +52,26 @@ module.exports = appInfo => {
                 try {
                     const headers = Object.assign({}, ctx.headers);
                     delete headers.host;
-                    const account = await ctx.fetch(`/account/gettopaccountinfo`, {
-                        headers: headers,
-                        hostname: 'tob'
-                    });
 
-                    const uid = get(account, 'data.results.uid');
+                    const account = await Promise.all([
+                        ctx.fetch(`/account/gettopaccountinfo`, {
+                            headers: headers,
+                            hostname: 'tob'
+                        }).then(({data}) => get(data, 'results')),
+                        ctx.fetch(`/common/get_config`, {headers: headers}).then(({data}) => get(data, 'results')).catch((e) => {
+                            ctx.app.logger.error(e);
+                            return {};
+                        })
+                    ]).then(([account, config]) => {
+                        account.referralConfig = config;
+                        return account;
+                    });
+                    const uid = get(account, 'uid');
                     if (uid) {
-                        const module = getModule && getModule(account.data.results);
+                        const module = getModule && getModule(account);
                         await ctx.render(module || 'index', {
                             m_bole_path: ctx.app.config.getBoleUrl(module),
-                            account: Object.assign({}, account.data.results, {customize: module})
+                            account: Object.assign({}, account, {customize: module})
                         });
                     } else {
                         await ctx.redirect(`/?referer=${encodeURIComponent(ctx.url)}`);
