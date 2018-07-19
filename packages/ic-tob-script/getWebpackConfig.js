@@ -89,6 +89,7 @@ module.exports = (name, defaults=[]) => {
         },
         devtool: 'source-map',
         devServer: {
+            host: ip,
             port: staticPort,
             contentBase: './dist',
             public: `${baseAddress}:${staticPort}`,

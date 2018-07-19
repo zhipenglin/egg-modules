@@ -56,6 +56,7 @@ module.exports = appInfo => {
                         headers: headers,
                         hostname: 'tob'
                     });
+
                     const uid = get(account, 'data.results.uid');
                     if (uid) {
                         const module = getModule && getModule(account.data.results);
