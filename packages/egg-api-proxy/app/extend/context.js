@@ -10,7 +10,7 @@ module.exports = {
         delete options.dataType;
 
         if (!/^https?:\/\//.test(url)) {
-            const proxyConfig = getConfig(this.app.config.apiProxy.fetch, options.hostname || get(options, 'headers.hostname'), url);
+            const proxyConfig = getConfig(this.app.config.apiProxy.fetch, options.hostname || options.customizeHostName || get(options, 'headers.hostname'), url);
             // 1. 如果传入的为相对路径，则自动拼接域名，并设置默认返回类型为 json
             url = proxyConfig.host + url;
             dataType = dataType || 'json';

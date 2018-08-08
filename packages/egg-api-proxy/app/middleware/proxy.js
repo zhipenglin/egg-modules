@@ -6,11 +6,13 @@ module.exports = () => {
             {defaultHostName} = ctx.app.config.apiProxy.proxy,
             apiPattern = new RegExp(`^(\/${name})?\/api\/`),
             routePath = ctx.url;
+        const {customize} = ctx.query;
         if (apiPattern.test(routePath)) {
             const IS_MINE_API = RegExp.$1;
 
             const headers = Object.assign({}, ctx.headers),
                 hostname = headers.hostname;
+            const customizeHostName = customize || '';
             delete headers.host;
             const apiPath = routePath.replace(apiPattern, '/');
             let results = {};
@@ -19,6 +21,7 @@ module.exports = () => {
                 method: ctx.method,
                 headers,
                 hostname: IS_MINE_API ? hostname || 'defaults' : defaultHostName,
+                customizeHostName: customizeHostName,
                 data: ctx.request.body,
             };
 
