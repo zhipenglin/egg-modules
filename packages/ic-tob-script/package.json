@@ -1,6 +1,6 @@
 {
   "name": "ic-tob-script",
-  "version": "2.2.7-0",
+  "version": "2.3.0",
   "description": "用于统一tob打包项目的配置",
   "target": "node",
   "bin": {
@@ -12,6 +12,7 @@
   "author": "admin",
   "license": "ISC",
   "dependencies": {
+    "@engr/ic-customize-loader": "^0.0.1",
     "autoprefixer": "^8.6.2",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
@@ -34,7 +35,6 @@
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^2.30.1",
-    "ic-customize-loader": "^1.2.0",
     "ic-get-customize-config": "^2.2.7-0",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
