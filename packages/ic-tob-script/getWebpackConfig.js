@@ -73,6 +73,13 @@ module.exports = (name, defaults=[]) => {
         }));
     }
     const STATIC_ROOT_DIR = path.resolve(currentPath, './app/static/tob');
+
+    const rules=[
+        {
+            test: /@p@([./])/g,
+            value:`${name}$1${defaults&&defaults.length>0?` ${defaults.map(name=>`${name}$1`).join(' ')}`:''}`
+        }
+    ];
     return transform({
         entry: {
             'commons': [
@@ -154,14 +161,9 @@ module.exports = (name, defaults=[]) => {
                             ],
                             use: [
                                 {
-                                    loader: 'ic-customize-loader',
+                                    loader: '@engr/ic-customize-loader',
                                     options: {
-                                        rules: [
-                                            {
-                                                test: /@p@([./])/g,
-                                                value:`${name}$1${defaults&&defaults.length>0?` ${defaults.map(name=>`${name}$1`).join(' ')}`:''}`
-                                            }
-                                        ]
+                                        rules
                                     }
                                 },
                                 {
@@ -199,10 +201,15 @@ module.exports = (name, defaults=[]) => {
                                 publicPath: '../',
                                 use: [
                                     'css-loader',
+                                    "sass-loader",
                                     {
                                         loader: 'postcss-loader',
                                         options: {
+                                            syntax: 'postcss-scss',
                                             plugins: () => [
+                                                require('@engr/ic-customize-loader/postcssPlugin')({
+                                                    rules
+                                                }),
                                                 require('postcss-flexbugs-fixes'),
                                                 require('autoprefixer')({
                                                     browsers: [
@@ -212,19 +219,23 @@ module.exports = (name, defaults=[]) => {
                                                         'not ie < 9', // React doesn't support IE8 anyway
                                                     ],
                                                     flexbox: 'no-2009',
-                                                }),
+                                                })
                                             ],
                                         },
-                                    },
-                                    "sass-loader"
+                                    }
                                 ]
                             }) : [
                                 'style-loader',
                                 'css-loader',
+                                "sass-loader",
                                 {
                                     loader: 'postcss-loader',
                                     options: {
+                                        syntax: 'postcss-scss',
                                         plugins: () => [
+                                            require('@engr/ic-customize-loader/postcssPlugin')({
+                                                rules
+                                            }),
                                             require('postcss-flexbugs-fixes'),
                                             require('autoprefixer')({
                                                 browsers: [
@@ -237,8 +248,7 @@ module.exports = (name, defaults=[]) => {
                                             }),
                                         ],
                                     },
-                                },
-                                "sass-loader"
+                                }
                             ],
                         },
                         {

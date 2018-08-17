@@ -1,17 +1,66 @@
-0 silly input [ 'lodash', 'scope=ic-get-customize-config' ]
-1 silly flags { _: [ 'add' ],
+0 silly input [ 'publish' ]
+1 silly flags { _: [ 'publish' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   dev: false,
-1 silly flags   D: false,
-1 silly flags   args: [ 'lodash', 'scope=ic-get-customize-config' ] }
+1 silly flags   scope: 'egg-tob-framework' }
 2 verbose rootPath /Users/linzhipeng/Documents/egg-modules
 3 info version 2.11.0
 4 silly isInitialized
 5 silly isInitialized true
 6 silly existsSync /Users/linzhipeng/Documents/egg-modules/VERSION
-7 silly initialize attempt
-8 error initialize callback with error
-9 error HTTPError: Response code 403 (Forbidden)
-9 error     at stream.catch.then.data (/usr/local/lib/node_modules/lerna/node_modules/got/index.js:123:13)
-9 error     at <anonymous>
+7 info scope egg-tob-framework
+8 silly initialize attempt
+9 info current version 2.3.5
+10 silly isDetachedHead
+11 silly getCurrentBranch
+12 verbose getCurrentBranch master
+13 verbose isDetachedHead false
+14 silly getCurrentBranch
+15 verbose getCurrentBranch master
+16 silly getUpdates
+17 info Checking for updated packages...
+18 silly hasTags
+19 verbose hasTags false
+20 info Comparing with initial commit.
+21 verbose updated egg-tob-framework
+22 info Checking for prereleased packages...
+23 silly collectDependents
+24 silly isPackageDependentOf egg-tob-framework egg-tob-framework
+25 silly isPackageDependentOf egg-api-mock egg-tob-framework
+26 silly isPackageDependentOf egg-api-proxy egg-tob-framework
+27 silly isPackageDependentOf egg-api-proxy egg-tob-framework
+28 silly isPackageDependentOf ic-get-customize-config egg-tob-framework
+29 silly collectUpdates
+30 verbose has filtered update egg-tob-framework
+31 silly initialize success
+32 silly execute attempt
+33 silly addFile /Users/linzhipeng/Documents/egg-modules/lerna.json
+34 silly runScriptSync preversion undefined
+35 silly runScriptSync preversion egg-tob-framework
+36 silly runScriptSync version egg-tob-framework
+37 silly runScriptSync version undefined
+38 silly addFile /Users/linzhipeng/Documents/egg-modules/packages/egg-tob-framework/package.json
+39 silly commit v2.3.5
+40 verbose commit [ 'commit', '--no-verify', '-m', 'v2.3.5' ]
+41 error execute caught error
+42 error Error: On branch master
+42 error Your branch is ahead of 'origin/master' by 1 commit.
+42 error   (use "git push" to publish your local commits)
+42 error
+42 error Changes not staged for commit:
+42 error 	modified:   lerna-debug.log
+42 error 	modified:   packages/egg-api-mock/app/middleware/yapi-mock.js
+42 error 	modified:   packages/ic-tob-script/getWebpackConfig.js
+42 error 	modified:   packages/ic-tob-script/package-lock.json
+42 error
+42 error Untracked files:
+42 error 	packages/egg-virtual-static/
+42 error
+42 error no changes added to commit
+42 error
+42 error     at Function.module.exports.sync (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:303:26)
+42 error     at Function.execSync (/usr/local/lib/node_modules/lerna/lib/ChildProcessUtilities.js:59:30)
+42 error     at Function.commit (/usr/local/lib/node_modules/lerna/lib/GitUtilities.js:94:39)
+42 error     at PublishCommand.gitCommitAndTagVersion (/usr/local/lib/node_modules/lerna/lib/commands/PublishCommand.js:778:30)
+42 error     at PublishCommand.commitAndTagUpdates (/usr/local/lib/node_modules/lerna/lib/commands/PublishCommand.js:740:27)
+42 error     at PublishCommand.execute (/usr/local/lib/node_modules/lerna/lib/commands/PublishCommand.js:329:14)

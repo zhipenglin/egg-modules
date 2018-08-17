@@ -5,7 +5,7 @@ module.exports = function () {
     return async function (ctx, next) {
         const {name} = ctx.app.config.apiProxy,
             apiPattern = new RegExp(`^(\/${name})?\/api\/`),
-            routePath = ctx.path,
+            routePath = ctx.url,
             {id, base, urls, open} = ctx.app.config.apiMock.yapi;
         if(apiPattern.test(routePath)){
             const apiPath = routePath.replace(apiPattern, '/');
