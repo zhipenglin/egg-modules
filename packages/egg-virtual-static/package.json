@@ -1,6 +1,6 @@
 {
   "name": "egg-virtual-static",
-  "version": "2.3.7",
+  "version": "2.3.8",
   "description": "虚拟静态资源",
   "eggPlugin": {
     "name": "virtualStatic"
@@ -38,6 +38,7 @@
     "autod": "autod"
   },
   "files": [
+    "app",
     "app.js",
     "agent.js",
     "config"
