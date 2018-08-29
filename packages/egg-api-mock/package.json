@@ -1,6 +1,6 @@
 {
   "name": "egg-api-mock",
-  "version": "2.3.16",
+  "version": "2.3.17",
   "description": "mock后端接口",
   "eggPlugin": {
     "name": "apiMock",
@@ -14,7 +14,7 @@
     "egg-plugin"
   ],
   "dependencies": {
-    "egg-api-proxy": "^2.3.16",
+    "egg-api-proxy": "^2.3.17",
     "fs-extra": "^6.0.1",
     "lodash": "^4.17.10",
     "minimatch": "^3.0.4"

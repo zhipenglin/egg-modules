@@ -1,6 +1,6 @@
 {
   "name": "egg-api-proxy",
-  "version": "2.3.16",
+  "version": "2.3.17",
   "description": "用于转发页面请求到后端，转发页面到index",
   "eggPlugin": {
     "name": "apiProxy"
