@@ -1,6 +1,6 @@
 {
   "name": "ic-get-customize-config",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "description": "获取定制配置",
   "target": "node",
   "main": "index.js",

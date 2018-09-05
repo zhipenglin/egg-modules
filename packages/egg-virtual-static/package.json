@@ -1,6 +1,6 @@
 {
   "name": "egg-virtual-static",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "description": "虚拟静态资源",
   "eggPlugin": {
     "name": "virtualStatic"
