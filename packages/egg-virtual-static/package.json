@@ -1,12 +1,9 @@
 {
   "name": "egg-virtual-static",
-  "version": "2.4.7-alpha.2",
+  "version": "2.4.7-alpha.3",
   "description": "虚拟静态资源",
   "eggPlugin": {
-    "name": "virtualStatic",
-    "dependencies": [
-      "reactRender"
-    ]
+    "name": "virtualStatic"
   },
   "keywords": [
     "egg",
@@ -15,7 +12,6 @@
   ],
   "dependencies": {
     "address": "^1.0.3",
-    "egg-react-render": "^2.4.7-alpha.2",
     "http-proxy": "^1.17.0"
   },
   "devDependencies": {
