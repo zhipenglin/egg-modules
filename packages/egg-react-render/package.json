@@ -1,6 +1,6 @@
 {
   "name": "egg-react-render",
-  "version": "2.4.7-alpha.0",
+  "version": "2.4.7-alpha.1",
   "description": "react服务器端渲染",
   "target": "node",
   "eggPlugin": {
@@ -10,5 +10,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "admin",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@loadable/server": "^5.3.0"
+  },
+  "peerDependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
 }
