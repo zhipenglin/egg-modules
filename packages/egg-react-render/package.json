@@ -1,0 +1,14 @@
+{
+  "name": "egg-react-render",
+  "version": "2.4.7-alpha.0",
+  "description": "react服务器端渲染",
+  "target": "node",
+  "eggPlugin": {
+    "name": "reactRender"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "admin",
+  "license": "ISC"
+}
