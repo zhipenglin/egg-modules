@@ -23,12 +23,12 @@ module.exports = {
             options.headers = Object.assign({}, proxyConfig.headers, options.headers);
         }
 
-        normalizeHeaderName(options.headers,'content-type');
+        normalizeHeaderName(options.headers, 'content-type');
 
-        if(typeof options.data === 'object'){
-            if(options.headers['content-type']==='application/x-www-form-urlencoded'){
+        if (typeof options.data === 'object') {
+            if (get(options,'headers["content-type"]','').indexOf('application/x-www-form-urlencoded') > -1) {
                 options.data = qs.stringify(options.data);
-            }else{
+            } else {
                 options.data = JSON.stringify(options.data);
             }
         }

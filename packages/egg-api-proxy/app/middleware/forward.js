@@ -1,4 +1,3 @@
-const get = require('lodash/get');
 module.exports = function() {
   return async function(ctx, next) {
     const { renderView } = ctx.app.config.apiProxy.forward;

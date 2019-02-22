@@ -85,4 +85,12 @@ describe('test/api-proxy.test.js', () => {
             .expect(resData)
             .expect(200);
     });
+
+    it('发送请求超时',()=>{
+        app.mockHttpclient('http://valeo.neitui_hr.cheng95.com/get_info', {
+            status:504
+        });
+        return app.httpRequest()
+            .post('/api/get_info').expect(500);
+    });
 });

@@ -1,5 +1,5 @@
-const formstream=require('formstream');
-const normalizeHeaderName=require('../../lib/normalizeHeaderName');
+const formstream = require('formstream');
+const normalizeHeaderName = require('../../lib/normalizeHeaderName');
 module.exports = () => {
     return async (ctx, next) => {
         const {name} = ctx.app.config.apiProxy,
@@ -17,34 +17,34 @@ module.exports = () => {
             const apiPath = routePath.replace(apiPattern, '/');
             let results = {};
 
-            const fetchOptions={
+            const fetchOptions = {
                 method: ctx.method,
                 headers,
-                hostname: IS_MINE_API ? hostname || 'defaults' : defaultHostName,
+                hostname: IS_MINE_API ? hostname || customize || 'defaults' : defaultHostName,
                 customizeHostName: customizeHostName,
                 data: ctx.request.body,
             };
 
-            if(ctx.is('multipart')){
+            if (ctx.is('multipart')) {
                 const form = formstream();
                 const stream = await ctx.getFileStream();
                 form.stream(stream.fieldname, stream, stream.filename);
                 const headers = form.headers();
-                normalizeHeaderName(headers,'content-type');
-                fetchOptions.headers=Object.assign({},fetchOptions.headers,headers);
-                fetchOptions.stream=form;
+                normalizeHeaderName(headers, 'content-type');
+                fetchOptions.headers = Object.assign({}, fetchOptions.headers, headers);
+                fetchOptions.stream = form;
                 delete fetchOptions.data;
             }
 
-            try{
+            try {
                 results = await ctx.fetch(apiPath, fetchOptions);
-            }catch(e){
-                results={
-                    status:500,
-                    headers:{},
-                    data:{
-                        err_no:500||e.code,
-                        err_msg:e.name||e.message
+            } catch (e) {
+                results = {
+                    status: 500,
+                    headers: {},
+                    data: {
+                        err_no: e.status || e.code || 500,
+                        err_msg: e.name || e.message
                     }
                 };
             }

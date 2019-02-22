@@ -2,65 +2,250 @@
 1 silly flags { _: [ 'publish' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   scope: 'egg-tob-framework' }
+1 silly flags   'skip-git': true,
+1 silly flags   skipGit: true,
+1 silly flags   'force-publish': '*',
+1 silly flags   forcePublish: '*' }
 2 verbose rootPath /Users/linzhipeng/Documents/egg-modules
 3 info version 2.11.0
 4 silly isInitialized
 5 silly isInitialized true
 6 silly existsSync /Users/linzhipeng/Documents/egg-modules/VERSION
-7 info scope egg-tob-framework
-8 silly initialize attempt
-9 info current version 2.3.5
-10 silly isDetachedHead
-11 silly getCurrentBranch
-12 verbose getCurrentBranch master
-13 verbose isDetachedHead false
-14 silly getCurrentBranch
-15 verbose getCurrentBranch master
-16 silly getUpdates
-17 info Checking for updated packages...
-18 silly hasTags
-19 verbose hasTags false
-20 info Comparing with initial commit.
-21 verbose updated egg-tob-framework
-22 info Checking for prereleased packages...
-23 silly collectDependents
-24 silly isPackageDependentOf egg-tob-framework egg-tob-framework
-25 silly isPackageDependentOf egg-api-mock egg-tob-framework
-26 silly isPackageDependentOf egg-api-proxy egg-tob-framework
-27 silly isPackageDependentOf egg-api-proxy egg-tob-framework
-28 silly isPackageDependentOf ic-get-customize-config egg-tob-framework
-29 silly collectUpdates
-30 verbose has filtered update egg-tob-framework
-31 silly initialize success
-32 silly execute attempt
-33 silly addFile /Users/linzhipeng/Documents/egg-modules/lerna.json
-34 silly runScriptSync preversion undefined
-35 silly runScriptSync preversion egg-tob-framework
-36 silly runScriptSync version egg-tob-framework
-37 silly runScriptSync version undefined
-38 silly addFile /Users/linzhipeng/Documents/egg-modules/packages/egg-tob-framework/package.json
-39 silly commit v2.3.5
-40 verbose commit [ 'commit', '--no-verify', '-m', 'v2.3.5' ]
-41 error execute caught error
-42 error Error: On branch master
-42 error Your branch is ahead of 'origin/master' by 1 commit.
-42 error   (use "git push" to publish your local commits)
-42 error
-42 error Changes not staged for commit:
-42 error 	modified:   lerna-debug.log
-42 error 	modified:   packages/egg-api-mock/app/middleware/yapi-mock.js
-42 error 	modified:   packages/ic-tob-script/getWebpackConfig.js
-42 error 	modified:   packages/ic-tob-script/package-lock.json
-42 error
-42 error Untracked files:
-42 error 	packages/egg-virtual-static/
-42 error
-42 error no changes added to commit
-42 error
-42 error     at Function.module.exports.sync (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:303:26)
-42 error     at Function.execSync (/usr/local/lib/node_modules/lerna/lib/ChildProcessUtilities.js:59:30)
-42 error     at Function.commit (/usr/local/lib/node_modules/lerna/lib/GitUtilities.js:94:39)
-42 error     at PublishCommand.gitCommitAndTagVersion (/usr/local/lib/node_modules/lerna/lib/commands/PublishCommand.js:778:30)
-42 error     at PublishCommand.commitAndTagUpdates (/usr/local/lib/node_modules/lerna/lib/commands/PublishCommand.js:740:27)
-42 error     at PublishCommand.execute (/usr/local/lib/node_modules/lerna/lib/commands/PublishCommand.js:329:14)
+7 silly initialize attempt
+8 info current version 2.5.0
+9 silly getUpdates
+10 info Checking for updated packages...
+11 silly hasTags
+12 verbose hasTags true
+13 silly getLastTag
+14 verbose getLastTag v2.5.0
+15 info Comparing with v2.5.0.
+16 verbose updated @egg/egg-api-mock
+17 verbose updated @egg/egg-api-proxy
+18 verbose updated @egg/egg-dev-cache
+19 verbose updated @egg/egg-react-render
+20 verbose updated @egg/egg-virtual-static
+21 info Checking for prereleased packages...
+22 silly collectDependents
+23 silly isPackageDependentOf @egg/egg-api-mock @egg/egg-api-mock
+24 silly isPackageDependentOf @egg/egg-api-mock @egg/egg-api-proxy
+25 silly isPackageDependentOf @egg/egg-api-mock @egg/egg-dev-cache
+26 silly isPackageDependentOf @egg/egg-api-mock @egg/egg-react-render
+27 silly isPackageDependentOf @egg/egg-api-mock @egg/egg-virtual-static
+28 silly isPackageDependentOf @egg/egg-api-proxy @egg/egg-api-mock
+29 silly isPackageDependentOf @egg/egg-api-proxy @egg/egg-api-proxy
+30 silly isPackageDependentOf @egg/egg-api-proxy @egg/egg-dev-cache
+31 silly isPackageDependentOf @egg/egg-api-proxy @egg/egg-react-render
+32 silly isPackageDependentOf @egg/egg-api-proxy @egg/egg-virtual-static
+33 silly isPackageDependentOf @egg/egg-dev-cache @egg/egg-api-mock
+34 silly isPackageDependentOf @egg/egg-dev-cache @egg/egg-api-proxy
+35 silly isPackageDependentOf @egg/egg-dev-cache @egg/egg-dev-cache
+36 silly isPackageDependentOf @egg/egg-dev-cache @egg/egg-react-render
+37 silly isPackageDependentOf @egg/egg-dev-cache @egg/egg-virtual-static
+38 silly isPackageDependentOf @egg/egg-react-render @egg/egg-api-mock
+39 silly isPackageDependentOf @egg/egg-react-render @egg/egg-api-proxy
+40 silly isPackageDependentOf @egg/egg-react-render @egg/egg-dev-cache
+41 silly isPackageDependentOf @egg/egg-react-render @egg/egg-react-render
+42 silly isPackageDependentOf @egg/egg-react-render @egg/egg-virtual-static
+43 silly isPackageDependentOf @egg/egg-virtual-static @egg/egg-api-mock
+44 silly isPackageDependentOf @egg/egg-virtual-static @egg/egg-api-proxy
+45 silly isPackageDependentOf @egg/egg-virtual-static @egg/egg-dev-cache
+46 silly isPackageDependentOf @egg/egg-virtual-static @egg/egg-react-render
+47 silly isPackageDependentOf @egg/egg-virtual-static @egg/egg-virtual-static
+48 silly collectUpdates
+49 verbose has filtered update @egg/egg-api-mock
+50 verbose has filtered update @egg/egg-api-proxy
+51 verbose has filtered update @egg/egg-dev-cache
+52 verbose has filtered update @egg/egg-react-render
+53 verbose has filtered update @egg/egg-virtual-static
+54 silly initialize success
+55 silly execute attempt
+56 silly runScriptSync preversion undefined
+57 silly runScriptSync preversion @egg/egg-api-mock
+58 silly runScriptSync version @egg/egg-api-mock
+59 silly runScriptSync preversion @egg/egg-api-proxy
+60 silly runScriptSync version @egg/egg-api-proxy
+61 silly runScriptSync preversion @egg/egg-dev-cache
+62 silly runScriptSync version @egg/egg-dev-cache
+63 silly runScriptSync preversion @egg/egg-react-render
+64 silly runScriptSync version @egg/egg-react-render
+65 silly runScriptSync preversion @egg/egg-virtual-static
+66 silly runScriptSync version @egg/egg-virtual-static
+67 silly runScriptSync version undefined
+68 info publish Publishing packages to npm...
+69 silly existsSync /Users/linzhipeng/Documents/egg-modules/packages/egg-api-mock/scripts/prepublish.js
+70 verbose execScript No prepublish script found at /Users/linzhipeng/Documents/egg-modules/packages/egg-api-mock/scripts/prepublish.js
+71 silly existsSync /Users/linzhipeng/Documents/egg-modules/packages/egg-api-proxy/scripts/prepublish.js
+72 verbose execScript No prepublish script found at /Users/linzhipeng/Documents/egg-modules/packages/egg-api-proxy/scripts/prepublish.js
+73 silly existsSync /Users/linzhipeng/Documents/egg-modules/packages/egg-dev-cache/scripts/prepublish.js
+74 verbose execScript No prepublish script found at /Users/linzhipeng/Documents/egg-modules/packages/egg-dev-cache/scripts/prepublish.js
+75 silly existsSync /Users/linzhipeng/Documents/egg-modules/packages/egg-react-render/scripts/prepublish.js
+76 verbose execScript No prepublish script found at /Users/linzhipeng/Documents/egg-modules/packages/egg-react-render/scripts/prepublish.js
+77 silly existsSync /Users/linzhipeng/Documents/egg-modules/packages/egg-virtual-static/scripts/prepublish.js
+78 verbose execScript No prepublish script found at /Users/linzhipeng/Documents/egg-modules/packages/egg-virtual-static/scripts/prepublish.js
+79 verbose publishing @egg/egg-api-mock
+80 silly publishTaggedInDir latest egg-api-mock
+81 silly getExecOpts { cwd:
+81 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-api-mock' }
+82 verbose publishing @egg/egg-api-proxy
+83 silly publishTaggedInDir latest egg-api-proxy
+84 silly getExecOpts { cwd:
+84 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-api-proxy' }
+85 verbose publishing @egg/egg-dev-cache
+86 silly publishTaggedInDir latest egg-dev-cache
+87 silly getExecOpts { cwd:
+87 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-dev-cache' }
+88 verbose publishing @egg/egg-react-render
+89 silly publishTaggedInDir latest egg-react-render
+90 silly getExecOpts { cwd:
+90 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-react-render' }
+91 error publish Retrying failed publish: @egg/egg-react-render
+92 verbose publish error undefined
+93 verbose publishing @egg/egg-react-render
+94 silly publishTaggedInDir latest egg-react-render
+95 silly getExecOpts { cwd:
+95 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-react-render' }
+96 error publish Retrying failed publish: @egg/egg-dev-cache
+97 verbose publish error undefined
+98 verbose publishing @egg/egg-dev-cache
+99 silly publishTaggedInDir latest egg-dev-cache
+100 silly getExecOpts { cwd:
+100 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-dev-cache' }
+101 error publish Retrying failed publish: @egg/egg-api-mock
+102 verbose publish error undefined
+103 verbose publishing @egg/egg-api-mock
+104 silly publishTaggedInDir latest egg-api-mock
+105 silly getExecOpts { cwd:
+105 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-api-mock' }
+106 error publish Retrying failed publish: @egg/egg-api-proxy
+107 verbose publish error undefined
+108 verbose publishing @egg/egg-api-proxy
+109 silly publishTaggedInDir latest egg-api-proxy
+110 silly getExecOpts { cwd:
+110 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-api-proxy' }
+111 error publish Retrying failed publish: @egg/egg-react-render
+112 verbose publish error undefined
+113 verbose publishing @egg/egg-react-render
+114 silly publishTaggedInDir latest egg-react-render
+115 silly getExecOpts { cwd:
+115 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-react-render' }
+116 error publish Retrying failed publish: @egg/egg-dev-cache
+117 verbose publish error undefined
+118 verbose publishing @egg/egg-dev-cache
+119 silly publishTaggedInDir latest egg-dev-cache
+120 silly getExecOpts { cwd:
+120 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-dev-cache' }
+121 error publish Retrying failed publish: @egg/egg-api-mock
+122 verbose publish error undefined
+123 verbose publishing @egg/egg-api-mock
+124 silly publishTaggedInDir latest egg-api-mock
+125 silly getExecOpts { cwd:
+125 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-api-mock' }
+126 error publish Retrying failed publish: @egg/egg-api-proxy
+127 verbose publish error undefined
+128 verbose publishing @egg/egg-api-proxy
+129 silly publishTaggedInDir latest egg-api-proxy
+130 silly getExecOpts { cwd:
+130 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-api-proxy' }
+131 error publish Retrying failed publish: @egg/egg-react-render
+132 verbose publish error undefined
+133 verbose publishing @egg/egg-react-render
+134 silly publishTaggedInDir latest egg-react-render
+135 silly getExecOpts { cwd:
+135 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-react-render' }
+136 error publish Retrying failed publish: @egg/egg-dev-cache
+137 verbose publish error undefined
+138 verbose publishing @egg/egg-dev-cache
+139 silly publishTaggedInDir latest egg-dev-cache
+140 silly getExecOpts { cwd:
+140 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-dev-cache' }
+141 error publish Retrying failed publish: @egg/egg-api-mock
+142 verbose publish error undefined
+143 verbose publishing @egg/egg-api-mock
+144 silly publishTaggedInDir latest egg-api-mock
+145 silly getExecOpts { cwd:
+145 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-api-mock' }
+146 error publish Retrying failed publish: @egg/egg-api-proxy
+147 verbose publish error undefined
+148 verbose publishing @egg/egg-api-proxy
+149 silly publishTaggedInDir latest egg-api-proxy
+150 silly getExecOpts { cwd:
+150 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-api-proxy' }
+151 error publish Retrying failed publish: @egg/egg-react-render
+152 verbose publish error undefined
+153 verbose publishing @egg/egg-react-render
+154 silly publishTaggedInDir latest egg-react-render
+155 silly getExecOpts { cwd:
+155 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-react-render' }
+156 error publish Retrying failed publish: @egg/egg-dev-cache
+157 verbose publish error undefined
+158 verbose publishing @egg/egg-dev-cache
+159 silly publishTaggedInDir latest egg-dev-cache
+160 silly getExecOpts { cwd:
+160 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-dev-cache' }
+161 error publish Retrying failed publish: @egg/egg-api-mock
+162 verbose publish error undefined
+163 verbose publishing @egg/egg-api-mock
+164 silly publishTaggedInDir latest egg-api-mock
+165 silly getExecOpts { cwd:
+165 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-api-mock' }
+166 error publish Retrying failed publish: @egg/egg-api-proxy
+167 verbose publish error undefined
+168 verbose publishing @egg/egg-api-proxy
+169 silly publishTaggedInDir latest egg-api-proxy
+170 silly getExecOpts { cwd:
+170 silly getExecOpts    '/Users/linzhipeng/Documents/egg-modules/packages/egg-api-proxy' }
+171 error publish Ran out of retries while publishing @egg/egg-react-render Error: Command failed: npm publish --tag latest
+171 error publish npm notice
+171 error publish npm notice 📦  @egg/egg-react-render@2.5.0
+171 error publish npm notice === Tarball Contents ===
+171 error publish npm notice 429B  package.json
+171 error publish npm notice 593B  README.md
+171 error publish npm notice 1.8kB app/extend/context.js
+171 error publish npm notice 127B  config/config.default.js
+171 error publish npm notice 0     test/index.test.js
+171 error publish npm notice === Tarball Details ===
+171 error publish npm notice name:          @egg/egg-react-render
+171 error publish npm notice version:       2.5.0
+171 error publish npm notice package size:  1.4 kB
+171 error publish npm notice unpacked size: 2.9 kB
+171 error publish npm notice shasum:        0efa9aa8acc7f37bf205ea7c9216f7ac7807ef19
+171 error publish npm notice integrity:     sha512-WvmzZoH1xYJgI[...]PxXqY1fxnzcUQ==
+171 error publish npm notice total files:   5
+171 error publish npm notice
+171 error publish npm ERR! publish Failed PUT 401
+171 error publish npm ERR! code E401
+171 error publish npm ERR! authorization required to publish package @egg/egg-react-render : @egg/egg-react-render
+171 error publish
+171 error publish npm ERR! A complete log of this run can be found in:
+171 error publish npm ERR!     /Users/linzhipeng/.npm/_logs/2019-02-22T07_12_08_826Z-debug.log
+171 error publish
+171 error publish     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+171 error publish     at process._tickCallback (internal/process/next_tick.js:68:7)
+172 error execute callback with error
+173 error Error: Command failed: npm publish --tag latest
+173 error npm notice
+173 error npm notice 📦  @egg/egg-react-render@2.5.0
+173 error npm notice === Tarball Contents ===
+173 error npm notice 429B  package.json
+173 error npm notice 593B  README.md
+173 error npm notice 1.8kB app/extend/context.js
+173 error npm notice 127B  config/config.default.js
+173 error npm notice 0     test/index.test.js
+173 error npm notice === Tarball Details ===
+173 error npm notice name:          @egg/egg-react-render
+173 error npm notice version:       2.5.0
+173 error npm notice package size:  1.4 kB
+173 error npm notice unpacked size: 2.9 kB
+173 error npm notice shasum:        0efa9aa8acc7f37bf205ea7c9216f7ac7807ef19
+173 error npm notice integrity:     sha512-WvmzZoH1xYJgI[...]PxXqY1fxnzcUQ==
+173 error npm notice total files:   5
+173 error npm notice
+173 error npm ERR! publish Failed PUT 401
+173 error npm ERR! code E401
+173 error npm ERR! authorization required to publish package @egg/egg-react-render : @egg/egg-react-render
+173 error
+173 error npm ERR! A complete log of this run can be found in:
+173 error npm ERR!     /Users/linzhipeng/.npm/_logs/2019-02-22T07_12_08_826Z-debug.log
+173 error
+173 error     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
