@@ -1,5 +1,5 @@
 {
-	"scope":"@egg",
+	"scope": "@egg",
 	"devDependencies": {
 		"lerna": "^2.11.0"
 	}

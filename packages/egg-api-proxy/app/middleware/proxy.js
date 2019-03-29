@@ -55,7 +55,8 @@ module.exports = () => {
                 'content-type': results.headers['content-type'],
                 'set-cookie': results.headers['set-cookie']
             }, results.headers['content-disposition'] ? {'content-disposition': results.headers['content-disposition']} : {}));
-            return ctx.body = results.data;
+            ctx.type='jpg';
+            return ctx.body = '';
         }
 
         await next();
